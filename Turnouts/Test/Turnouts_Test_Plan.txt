@@ -1,0 +1,16 @@
+Turnouts tested:
+Normal turnouts: 1
+Joint turnouts:  2
+
+Test successful turnout change:
+For each direction - Set turnout to direction.
+Wait for changed callback to return not moving and in desired position.
+Check physical turnout is in desired position.
+
+Test turnout failure and recovery:
+For each direction of each turnout - Remove sensor wire on turnout with screwdriver.
+Set turnout to direction.
+Wait for failed turnout callback.
+Replace sensor wire.
+Wait for recovered turnout callback.
+Check physical turnout is in desired position.

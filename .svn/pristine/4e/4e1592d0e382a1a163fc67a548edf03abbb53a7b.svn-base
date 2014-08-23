@@ -1,0 +1,109 @@
+Author: Anthony Spoerl
+Team:   The Grounded Dutchmen
+
+Test Emergency Stop:
+Start Train 1.
+Press stop button on Controller 1.
+Expected: Train one will stop immediately, ignoring throttle and direction commands from Engineer 1.
+
+Dispatcher sends Go command to Train 1.
+Expected: Train 1 continues in the desired direction.
+
+Start all Trains.
+Dispatcher sends Stop All command.
+Expected: All Trains stopped, waiting for Dispatcher Go.
+
+
+Test Smart Throttle:
+For each train type:
+Set Controller 1 to 0%.
+Start Train 1.
+Increase Controller 1 throttle to 9%.
+Expected: Train 1 remains stopped.
+
+Increase Controller 1 throttle to 10%.
+Expected: Train 1 will begin moving.
+
+
+Test Horn:
+Start Train 2.
+Press horn button on Controller 2.
+Expected: Sound Approaching Highway signal.
+
+Set Controller 2 throttle to 0.
+Press horn button on Controller 2.
+Expected: Sound Starting signal.
+
+
+Test changing direction forward/backward:
+Start Train 1 forward (Novice skill level).
+Change direction to reverse on Controller 1.
+Expected: Train 1 ignores command and continues moving forward.
+Sound verbal warning for Train 1.
+
+Set Controller 1 throttle to 0% (stop train).
+Wait three seconds.
+Change Controller 1 direction to reverse.
+Increase Hand Conroller 1 throttle.
+Expected: Train 1 begins moving in reverse direction.
+
+Set Train 1 skill level to Expert.
+Repeat both tests.
+
+
+Test changing turnouts:
+Start Train 1. (Novice skill level)
+When approaching a turnout set to Left on its common limb
+Choose Right turnout direction on Controller 1.
+Expected: Train 1 ignores command, turnout remains set to Left.
+
+Set Train 1 trottle to 0%.
+After 3 seconds, set turnout direction to Right.
+Expected: Next turnout will be set to Right.
+
+Set Train 1 skill to Expert. (Train 1 moving)
+When approaching a turnout, set to opposite position on Controller 1.
+Expected: Turnout will change directions.
+
+** TODO: Scenarios of trains blocking turnouts with reservations **
+
+
+Test Collision Avoidance (Failed Allocation):
+Dispatcher set Turnout 15 to Right
+Initialize Train 1 on Blocks 31, 12.
+Start Train 2 on Blocks 29, 10.
+Expected: Train 2 stopped for Block 12.
+
+Same as previous scenario, after Train 2 is stopped.
+Set Turnout 15 to Left from Controller 2.
+Expected: Train 2 continues forward.
+
+Same as previous scenario, after Train 2 is stopped.
+Change Controller 2 direction to Reverse.
+Expected: Train 2 continues in Reverse.
+
+
+Test Turnout Failure:
+Remove sense bit on Turnout 1.
+Start Train 1 on Block 31.
+Choose Right turnout direction with Controller 1.
+Expected: Turnout 1 failure, Train 1 stopped, Dispatcher display "Waiting for failed turnout 1", announce waiting for turnout 1.
+
+Replace sense bit on Turnout 1.
+Expected: Turnout 1 recover. Train 1 continues Forward.
+
+Remove sense bit on Turnout 1.
+Start all Trains.
+Set Turnout 1 to Right from Dispatcher.
+Expected: Turnout 1 failure, All Trains stopped.
+
+Replace Turnout 1 sense bit.
+Expected: Turnout 1 recovery, All Trains waiting for Dispatcher Go.
+
+
+Test Lost Rolling Stock:
+Start Train 1 with detached caboose.
+Expected: Train 1 stopped after 6 blocks are allocated, Dispatcher display "Waiting for lost cars and dispatcher", announce waiting for lost cars.
+
+Push caboose towards Train 1 until within 5 blocks.
+Expected: Dispatcher display changed to "Waiting for dispatcher", Dispatcher Go allows Train 1 to continue.

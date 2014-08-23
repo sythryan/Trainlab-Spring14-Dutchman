@@ -1,0 +1,23 @@
+Test 1: Successfully reserving a block in each direction.
+For each block n:
+Reserve Block n
+Expected: Success
+
+Test 2: Failure on blocks that are already reserved
+For each block n:
+Reserve Block n
+Expected: Failed
+
+Test 3: Powering a reserved block
+For each block:
+Power each block with each available cab
+Check layout for LED to light up according to cab power
+
+Test 4: Freeing reserved blocks
+For each block n:
+Free block n
+Expected: Status of Block n is free
+
+Test 5: Powering an unreserved block
+Power Block 1
+Expcted: Failure, catch exception and check block 1 LED is not lit

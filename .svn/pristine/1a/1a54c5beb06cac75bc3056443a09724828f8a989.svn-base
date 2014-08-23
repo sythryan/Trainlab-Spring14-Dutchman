@@ -1,0 +1,92 @@
+project Dutchman is
+
+   type Target_Type is
+      ("Windows", "MaRTE", "Linux");
+   Target : Target_Type := external ("Target", "Linux");
+
+   case Target is
+
+      when "Windows" =>
+         for Source_Dirs use ("./**", "Layout", "EngineerControl", "Dispatcher", "locomotives", "Port_IO", "dac", "adc", "double_talk", "bounded_queue", "Command", "Trains", "Engineers", "Dallee", "Turnouts", "HallSensors", "cabs", "Blocks", 
+            "Engineers_Stub", "Layout/Test", "Turnouts/Test", "Dallee/Test", "HallSensors/Test");
+         for Main use ("adc_test_program.adb", "blocks_test.adb", "button_press_count.adb", "cabs_test.adb", "command_test.adb", "controller_test.adb", "dallee_test.adb", "dispatcher.adb", "display_test.adb", "double_talk_test.adb", 
+            "engineer_test.adb", "halls_test.adb", "layout_search_test.adb", "motors_test.adb", "motors_test.adb", "sound_test.adb", "test_layout.adb", "turnouts_test.adb");
+         for Source_Files use ("adc.adb", "adc.adb", "adc.ads", "adc_test_program.adb", "blocks.adb", "blocks.ads", "blocks_test.adb", "bounded_queue.adb", "bounded_queue.ads", "button_press_count.adb", "cabs.adb", "cabs.ads", "cabs_test.adb", 
+            "command.adb", "command.ads", "command_test.adb", "common_units.ads", "controller_test.adb", "dac.adb", "dac.ads", "dac_test.adb", "dallee.adb", "dallee.ads", "dallee_test.adb", "dispatcher.adb", "display.adb", "display.ads", 
+            "display_test.adb", "double_talk.adb", "double_talk.ads", "double_talk_test.adb", "engineercontrol.adb", "engineercontrol.ads", "engineers.adb", "engineers.adb", "engineers.ads", "engineers_stub.adb", "engineers_stub.ads", 
+            "engineer_test.adb", "engineer_types.ads", "halls.adb", "halls.ads", "halls_test.adb", "halls_test_callback.adb", "halls_test_callback.adb", "halls_test_callback.ads", "layout.adb", "layout.ads", "layout-search.adb", 
+            "layout-search.ads", "layout_search_test.adb", "locomotives.ads", "motors.adb", "motors.ads", "motors_test.adb", "motors_test.adb", "numeric_tests.adb", "numeric_tests.ads", "port_io.adb", "port_io.ads", "sound.adb", "sound.ads", 
+            "sound_test.adb", "test_layout.adb", "test_layout.adb", "trains.adb", "trains.ads", "trains-functions.adb", "trains-functions.ads", "train_types.ads", "turnouts.adb", "turnouts.ads", "turnouts_test.adb", 
+            "turnout_test_callbacks.adb", "turnout_test_callbacks.ads");
+         for Object_Dir use "bin/";
+
+      when "MaRTE" =>
+         for Source_Dirs use ("./**", "Layout", "EngineerControl", "Dispatcher", "locomotives", "Port_IO", "dac", "adc", "double_talk", "bounded_queue", "Command", "Trains", "Engineers", "Dallee", "Turnouts", "HallSensors", "cabs", "Blocks", 
+            "Engineers_Stub", "Layout/Test", "Turnouts/Test", "Dallee/Test", "HallSensors/Test");
+         for Main use ("adc_test_program.adb", "blocks_test.adb", "button_press_count.adb", "cabs_test.adb", "command_test.adb", "controller_test.adb", "dallee_test.adb", "dispatcher.adb", "display_test.adb", "double_talk_test.adb", 
+            "engineer_test.adb", "halls_test.adb", "layout_search_test.adb", "motors_test.adb", "motors_test.adb", "sound_test.adb", "test_layout.adb", "turnouts_test.adb");
+         for Source_Files use ("adc.adb", "adc.adb", "adc.ads", "adc_test_program.adb", "blocks.adb", "blocks.ads", "blocks_test.adb", "bounded_queue.adb", "bounded_queue.ads", "button_press_count.adb", "cabs.adb", "cabs.ads", "cabs_test.adb", 
+            "command.adb", "command.ads", "command_test.adb", "common_units.ads", "controller_test.adb", "dac.adb", "dac.ads", "dac_test.adb", "dallee.adb", "dallee.ads", "dallee_test.adb", "dispatcher.adb", "display.adb", "display.ads", 
+            "display_test.adb", "double_talk.adb", "double_talk.ads", "double_talk_test.adb", "engineercontrol.adb", "engineercontrol.ads", "engineers.adb", "engineers.adb", "engineers.ads", "engineers_stub.adb", "engineers_stub.ads", 
+            "engineer_test.adb", "engineer_types.ads", "halls.adb", "halls.ads", "halls_test.adb", "halls_test_callback.adb", "halls_test_callback.adb", "halls_test_callback.ads", "layout.adb", "layout.ads", "layout-search.adb", 
+            "layout-search.ads", "layout_search_test.adb", "locomotives.ads", "motors.adb", "motors.ads", "motors_test.adb", "motors_test.adb", "numeric_tests.adb", "numeric_tests.ads", "port_io.adb", "port_io.ads", "sound.adb", "sound.ads", 
+            "sound_test.adb", "test_layout.adb", "test_layout.adb", "trains.adb", "trains.ads", "trains-functions.adb", "trains-functions.ads", "train_types.ads", "turnouts.adb", "turnouts.ads", "turnouts_test.adb", 
+            "turnout_test_callbacks.adb", "turnout_test_callbacks.ads");
+         for Object_Dir use "bin/";
+
+      when "Linux" =>
+         for Source_Dirs use ("./**", "Layout", "EngineerControl", "Dispatcher", "locomotives", "Port_IO", "dac", "adc", "double_talk", "bounded_queue", "Command", "Trains", "Engineers", "Dallee", "Turnouts", "HallSensors", "cabs", "Blocks", 
+            "Engineers_Stub", "Layout/Test", "Turnouts/Test", "Dallee/Test", "HallSensors/Test", "Trains");
+         for Main use ("adc_test_program.adb", "blocks_test.adb", "button_press_count.adb", "cabs_test.adb", "command_test.adb", "controller_test.adb", "dallee_test.adb", "dispatcher.adb", "display_test.adb", "double_talk_test.adb", 
+            "engineer_test.adb", "halls_test.adb", "layout_search_test.adb", "motors_test.adb", "motors_test.adb", "sound_test.adb", "test_layout.adb", "turnouts_test.adb");
+         for Source_Files use ("adc.adb", "adc.adb", "adc.ads", "adc_test_program.adb", "blocks.adb", "blocks.ads", "blocks_test.adb", "bounded_queue.adb", "bounded_queue.ads", "button_press_count.adb", "cabs.adb", "cabs.ads", "cabs_test.adb", 
+            "command.adb", "command.ads", "command_test.adb", "common_units.ads", "controller_test.adb", "dac.adb", "dac.ads", "dac_test.adb", "dallee.adb", "dallee.ads", "dallee_test.adb", "dispatcher.adb", "display.adb", "display.ads", 
+            "display_test.adb", "double_talk.adb", "double_talk.ads", "double_talk_test.adb", "engineercontrol.adb", "engineercontrol.ads", "engineers.adb", "engineers.adb", "engineers.ads", "engineers_stub.adb", "engineers_stub.ads", 
+            "engineer_test.adb", "engineer_types.ads", "halls.adb", "halls.ads", "halls_test.adb", "halls_test_callback.adb", "halls_test_callback.adb", "halls_test_callback.ads", "layout.adb", "layout.ads", "layout-search.adb", 
+            "layout-search.ads", "layout_search_test.adb", "locomotives.ads", "motors.adb", "motors.ads", "motors_test.adb", "motors_test.adb", "numeric_tests.adb", "numeric_tests.ads", "port_io.adb", "port_io.ads", "sound.adb", "sound.ads", 
+            "sound_test.adb", "test_layout.adb", "test_layout.adb", "trains.adb", "trains.ads", "trains-functions.adb", "trains-functions.ads", "train_types.ads", "turnouts.adb", "turnouts.ads", "turnouts_test.adb", 
+            "turnout_test_callbacks.adb", "turnout_test_callbacks.ads");
+         for Object_Dir use "bin/";
+   end case;
+
+   package Pretty_Printer is
+      for Default_Switches ("ada") use ("-M80");
+   end Pretty_Printer;
+
+   package Ide is
+      for Vcs_Kind use "Subversion";
+      for Vcs_Repository_Root use "https://student.cs.uni.edu/svn/Trainlab-Spring14-Dutchman";
+
+      case Target is
+
+         when "Windows" =>
+
+         when "MaRTE" =>
+            for Compiler_Command ("ada") use "mgnatmake";
+
+         when "Linux" =>
+
+      end case;
+   end Ide;
+
+   package Builder is
+
+      case Target is
+
+         when "Windows" =>
+            for Default_Switches ("ada") use ("-g", "-C");
+
+         when "MaRTE" =>
+            for Default_Switches ("ada") use ("-g", "-C", "-x", "-o", "bin/mprogram");
+
+         when "Linux" =>
+            for Default_Switches ("ada") use ("-g", "-C");
+      end case;
+   end Builder;
+
+   package Compiler is
+      for Default_Switches ("ada") use ("-gnaty3M80abeklnprStx", "-gnatwa", "-gnato", "-fstack-check", "-g", "-gnat05");
+   end Compiler;
+
+end Dutchman;
+

@@ -1,0 +1,159 @@
+Next Choice Turnout Test Plan
+
+Block		Direction	Turnout
+1		Normal		6
+
+1		Reversed	13
+
+2		Normal		6
+
+2		Reversed	3
+
+3		Normal		12
+
+3		Reversed	3
+
+4		Normal		12
+
+4		Reversed	18
+
+5		Normal		12
+
+5		Reversed	18
+
+6		Normal		12
+
+6		Reversed	22
+
+7		Normal		12
+
+7		Reversed	23
+
+8		Normal		12
+
+8		Reversed	10
+
+9		Normal		15
+
+9		Reversed	10
+
+10		Normal		15
+
+10		Reversed	13
+
+11		Normal		6
+
+11		Reversed	13
+
+12		Normal		16
+
+12		Reversed	13
+
+13		Normal		2
+
+13		Reversed	16
+
+14		Normal		5
+
+14		Reversed	16
+
+15		Normal		5
+
+15		Reversed	4
+
+16		Normal		17
+
+16		Reversed	4
+
+17		Normal		17
+
+17		Reversed	7
+
+18		Normal		17
+
+18		Reversed	8
+
+19		Normal		21
+
+19		Reversed	8
+
+20		Normal		21
+
+20		Reversed	19
+
+21		Normal		21
+
+21		Reversed	20
+
+22		Normal		12
+
+22		Reversed	20
+
+23		Normal		11
+
+23		Reversed	20
+
+24		Normal		11
+
+24		Reversed	20
+
+25		Normal		5
+
+25		Reversed	20
+
+26		Normal		5
+
+26		Reversed	14
+
+27		Normal		5
+
+27		Reversed	10
+
+28		Normal		20
+
+28		Reversed	4
+
+29		Normal		15
+
+29		Reversed	17
+
+30		Normal		17
+
+30		Reversed	15
+
+31		Normal		1
+
+31		Reversed	16
+
+32		Normal		21
+
+32		Reversed	1
+
+33		Normal		21
+
+33		Reversed	1
+
+34		Normal		21
+
+34		Reversed	1
+
+35		Normal		21
+
+35		Reversed	9
+
+36		Normal		21
+
+36		Reversed	1
+
+37		Normal		21
+
+37		Reversed	1
+
+38		Normal		21
+
+38		Reversed	1
+
+39		Normal		21
+
+39		Reversed	12
+

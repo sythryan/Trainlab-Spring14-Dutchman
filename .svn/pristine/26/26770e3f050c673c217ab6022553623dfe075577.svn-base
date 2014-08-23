@@ -1,0 +1,18 @@
+Author: Anthony Spoerl
+Team:   Grounded Dutchman
+
+Check each cab is initialized to 0 volts
+For each cab:
+Set cab to max and check voltage (13.7 ~ 13.8)
+Set cab to 50% and check voltage (~7)
+
+Test speed limiting on Unit 1:
+Set cab limit to 0, set cab at 50% and 100%, check output remains 0 volts
+Set cab limit at 50%, set cab at 75%, voltage ~= 7
+set cab limit at 50%, set cab at 25%, voltage ~= 3.5
+
+Set cab limit higher than current level:
+Set limit to 50
+Set value to 50
+Set limit to 100
+Expected: cab value remains at 50

@@ -1,0 +1,67 @@
+Command Package Tests:
+Author: Anthony Spoerl
+Date:   3/5/2014
+
+To run, build the command_tests.adb and run from terminal with:
+(from base directory)
+./command_tests < Command/Test/Command-Tests.txt
+
+Goal:		Successful - Single Char
+Input:		R
+Expected:	Restart Command
+
+Goal:		Unsuccessful - Single Char (always invalid)
+Input:		+
+Expceted:	Error 
+
+Goal:		Unsuccessful - Single Char (invalid input)
+Input:		E
+Expected:	Error 
+
+Goal:		Successful - Two Chars
+Input:		1G
+Expected:	Start Train 1
+
+Input:		3S
+Expected:	Stop Train 3
+
+Input:		2E
+Expected:	Change Engineer 2 Level
+
+Input:		9L
+Expected:	Change Turnout 9 to Left
+
+Goal:		Unsuccessful - Two Chars (outside bounds of n)
+Input:		0S
+Expected:	Error 
+
+Input:		4E
+Expected:	Error 
+
+Goal:		Unsuccessful - Two Chars (Invalid Input)
+Input:		2X
+Expected:	Error 
+
+Goal:		Successfull - Three Chars
+Input:		26R
+Expected:	Change Turnout 26 Right
+
+Input:		10L
+Expected:	Change Turnout 10 Left
+
+Input:		40F
+Expected:	Free Block 40
+
+Goal:		Unsuccessful - Three Chars (n out of bounds)
+Input:		27L
+Expected:	Error
+
+Input:		41F
+Expected:	Error
+
+Goal:		Unsuccessful - Three Chars (invalid input)
+Input:		20Z
+Expected:	Error
+
+Input:		123
+Expected:	Error

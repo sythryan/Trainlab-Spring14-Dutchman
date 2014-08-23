@@ -1,0 +1,34 @@
+Author: Anthony Spoerl
+Team:   Grounded Dutchman
+
+Testing Sound_Horn:
+Exhaustive test of signals while cycling through units to every board processes a signal
+Input: 1, Stop
+Expected Signal: Short
+
+Input: 2, Start
+Expected: Long Long
+
+Input: 3, Approach_Highway
+Expected: Long Long Short Long
+
+Input: 1, Approach_Crossing
+Expected: Long Long Short
+
+Input: 2, Warning
+Expected: Short Short Short Short
+
+
+Testing Bell_On and Bell_Off:
+Turn on each unit's bell for three seconds with throttle below 4 notches.
+
+Testing multiple units:
+Input: 1, Start
+       2, Warning
+       3, Stop
+Expected: All signals on all three units simultaneously
+1: Short
+2: Short Short Short Short
+3: Long Long
+
+

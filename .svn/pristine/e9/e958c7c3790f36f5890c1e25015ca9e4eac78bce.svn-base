@@ -1,0 +1,13 @@
+Test upper and lower bounds of each register turning in both directions. Selected registers are hardcoded in motors_test.adb
+Tests will be done systematically. A turnout will be set and the system will wait for user to confirm it has successfully completed.
+
+Tested Turnouts:
+1
+4
+8
+12
+16
+20
+24
+25
+26

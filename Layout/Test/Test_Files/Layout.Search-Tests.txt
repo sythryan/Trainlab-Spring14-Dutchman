@@ -1,0 +1,46 @@
+Author : Anthony
+Team   : The Grounded Dutchman
+Layout.Search Package Tests:
+
+Blocks_Beneath:
+Goal:		Successful - Occupying 2 blocks
+Input:		Loco: 1
+		Caboose: 11
+Expected:	Blocks: Size=2, Block_Array={[11,Normal],[1,Normal]}
+			Turnouts: Size=0, Turnout_Array={}
+			Success: True
+
+Goal:		Successful - Occupying Blocks.Max_Size (3) blocks, no turnouts
+Input:		Loco: 36
+		Caboose: 38
+Expected:	Blocks: Size=3, Block_Array={[38,Reversed],[37,Reversed],[36,Reversed]}
+			Turnouts: Size=0, Turnout_Array={}
+			Success: True
+
+Goal:		Successful - Occupying Blocks.Max_Size (3) blocks, 2 turnouts
+Input:		Loco: 22
+		Caboose: 7
+Expected:	Blocks: Size=1, Block_Array={[7,Reversed],[6,Reversed],[22,Reversed]}
+			Turnouts: Size=0, Turnout_Array={[23,Left],[22,Left]}
+			Success: True
+
+Goal:		Successful - Occupying 2 blocks
+
+Goal:		Unsuccessful - Occupying 1 block (i.e. Loco=Caboose)
+Input:		Loco: 1
+		Caboose: 1
+Expected:	Blocks: Size=1, Block_Array={[1,???]}
+			Turnouts: Size=0, Turnout_Array={}
+			Success: False
+
+Goal:		Unsuccessful - Occupying more than Blocks.Max_Size (4)
+Input:		Loco: 3
+		Caboose: 11
+Expected:	Blocks: Size=1, Block_Array={[11,Normal],[1,Normal],[2,Normal],[3,Normal]}
+			Turnouts: Size=0, Turnout_Array={[3,Right],[6,Left]}
+			Success: False
+
+Goal:		Unsuccessful - Block ID does not exist
+			Loco: 0
+			Caboose: 50
+Expected:	Error Message (Data Error)
